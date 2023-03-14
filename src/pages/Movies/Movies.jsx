@@ -1,6 +1,6 @@
 import { SearchBar, SearchForm, SearchFormInput, SearchFormButton, SearchFormButtonLabel } from './Movies.styled'
 import { TiFilm } from "react-icons/ti";
-import { useSearchParams } from "react-router-dom";
+
 
 export const Movies = () => {
 
