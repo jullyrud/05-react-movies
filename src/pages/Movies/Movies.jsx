@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 export const Movies = () => {
 
 
+
     return (
         <SearchBar>
             <SearchForm >
@@ -13,8 +14,7 @@ export const Movies = () => {
                 <SearchFormButtonLabel>Search</SearchFormButtonLabel>
             </SearchFormButton>
 
-            
-                <SearchFormInput
+            <SearchFormInput
                 name="name"
                 type="text"
                 autocomplete="off"
