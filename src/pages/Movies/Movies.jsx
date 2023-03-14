@@ -13,7 +13,8 @@ export const Movies = () => {
                 <SearchFormButtonLabel>Search</SearchFormButtonLabel>
             </SearchFormButton>
 
-            <SearchFormInput
+            
+                <SearchFormInput
                 name="name"
                 type="text"
                 autocomplete="off"
