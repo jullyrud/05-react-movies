@@ -1,12 +1,10 @@
-import { Links, Title } from './Home.styled'
-export const Home = ({ trendsFilms }) => {
+import { Title } from './Home.styled'
+import { FilmsList } from '../../components/FilmsList/FilmsList'
+export const Home = ({ films }) => {
   return (
     <main>
-          <Title>Trending today</Title>
-             <ul>
-                {trendsFilms.map(({ id, original_title, name }) =>
-                        <Links to={`/movies/:${id}`} key={id}>{original_title ?? name}</Links>)}
-            </ul>
+        <Title>Trending today</Title>
+        <FilmsList films={ films } />
     </main>
   );
 };

@@ -9,7 +9,7 @@ import { Movies } from '../pages/Movies/Movies'
 
 export const App = () => {
  
-    const [trendsFilms, setTrendsFilms] = useState([]);
+    const [films, setTrendsFilms] = useState([]);
     
     useEffect(() => {
         getTrendsFilm().then(({data})=>setTrendsFilms(data.results))
@@ -18,7 +18,7 @@ export const App = () => {
     return (
         <Routes>
             <Route path="/" element={<SharedLayout/> }>
-                <Route index element={<Home trendsFilms={trendsFilms} />} />
+                <Route index element={<Home films={films} />} />
                 <Route path="movies" element={<Movies />} />
                 <Route path="/movies/:movieId" element={<MovieDetails />} />
             </ Route>
