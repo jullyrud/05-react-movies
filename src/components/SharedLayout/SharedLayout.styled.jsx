@@ -20,3 +20,8 @@ margin-right: 20px;
     color: #aec492
 }
 `
+
+export const MainCont = styled.div`
+  padding: 10px 30px;
+
+`
