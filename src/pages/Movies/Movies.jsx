@@ -45,7 +45,7 @@ const onHandleSubmit = (e) => {
                     />
                 </SearchForm>
             </SearchBar>
-            {queryString &&<FilmsList films={films}  /> }
+            {queryString && <FilmsList films={films}  /> }
         </>
         
     )

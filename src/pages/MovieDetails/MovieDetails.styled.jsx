@@ -1,4 +1,3 @@
-
 import styled from '@emotion/styled'
 
 export const FimWrap = styled.div`
@@ -12,9 +11,9 @@ flex-direction: column;
 `
 
 export const MovieContainer = styled.div`
+
 @media screen and (min-width: 480px) {
-display: flex;
-  
+display: flex; 
 }
 
 `

@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react"
-import { useParams, useLocation } from "react-router-dom"
+import { useParams, useLocation, Outlet } from "react-router-dom"
 import { getFilmByid, BASE_IMG_URL } from '../../api/gallery'
 import { FimWrap, MovieContainer, MovieImgBox } from './MovieDetails.styled'
 import { BackLink } from '../../components/BackLink/BackLink'
+import { AdditionalInfirmation } from '../../components/AdditionalInfirmation/AdditionalInfirmation'
 
 
 export const MovieDetails = () => {
 const [film, setFilm] = useState(null);   
 const { movieId } = useParams()
 const location = useLocation();
-    
-  
 
 useEffect(() => {
 
@@ -33,13 +32,15 @@ const getGenresString = (genres) => {
 if (!film) {
     return 
 }   
-  console.log();    
+  
 const { poster_path, title, release_date, overview, genres, vote_average } = film
-
+const backRef = location?.state?.from 
+  
 return (
-    <>
+    
         <FimWrap>
-            <BackLink path={location.state.from} />
+        <BackLink path={backRef ?? "/movies"} /> 
+        
             <MovieContainer>
                 <MovieImgBox>
                     <img src={`${BASE_IMG_URL}${poster_path}`} width="300 px" alt="" />
@@ -53,7 +54,10 @@ return (
                         <p>{getGenresString(genres)}</p> 
                     </div>
             </MovieContainer>
+            <AdditionalInfirmation backRef={backRef} />
+      
+            <Outlet />
         </FimWrap>
-        </>
+      
     )
 }
